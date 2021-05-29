@@ -1,0 +1,42 @@
+div.input {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.input.edit {
+  width: auto;
+  margin-bottom: 0;
+}
+
+input {
+  position: relative;
+  width: 100%;
+  padding-left: 8px;
+  outline: none;
+  color: #757575;
+  font-size: 20px;
+  border-bottom: 2px solid #1a1a1a;
+  background-color: transparent;
+  z-index: 11;
+}
+
+.input.card-edit {
+  width: 78%;
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+input ~ label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #757575;
+  transition: .4s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}

@@ -1,0 +1,23 @@
+#footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer {
+  padding: 28px;
+  background-color: #F9BA48;
+}
+
+.footer-left a {
+  color: #ffffff;
+  margin-right: 24px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-right-icon {
+  margin-left: 42px;
+}
+
