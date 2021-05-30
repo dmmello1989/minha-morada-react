@@ -2,12 +2,14 @@
 .select {
   position: relative;
   width: 350px;
+  color: #1a1a1a;
+  padding: 8px 16px;
   border-radius: 8px;
 }
 
-.select select {
+/* .select select {
   display: none;
-}
+} */
 
 .select-selected {
   background-color: #ffffff;

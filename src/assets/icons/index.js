@@ -10,6 +10,10 @@ import Facebook from "./facebook";
 import Instagram from "./instagram";
 import Logo from "./logo";
 import Message from "./message";
+import PersonOne from "./personOne";
+import PersonTwo from "./personTwo";
+import PersonThree from "./personThree";
+import PersonFour from "./personFour";
 import Resident from "./resident";
 import Room from "./room";
 import Search from "./search";
@@ -37,6 +41,14 @@ export const Icon = ({ icon, width, height, className }) => {
       return <Logo width={width} height={height} className={className} />;
     case "message":
       return <Message width={width} height={height} className={className} />;
+    case "personOne":
+      return <PersonOne width={width} height={height} className={className} />;
+    case "personTwo":
+      return <PersonTwo width={width} height={height} className={className} />;
+    case "personThree":
+      return <PersonThree width={width} height={height} className={className} />;
+    case "personFour":
+      return <PersonFour width={width} height={height} className={className} />;
     case "resident":
       return <Resident width={width} height={height} className={className} />;
     case "room":

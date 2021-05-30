@@ -8,7 +8,7 @@ import { Box } from "../../Box";
 
 export const Resident = ({ tabActive }) => {
   return (
-    <div>
+    <div className="content">
       {tabActive === "search" && <Search />}
       {tabActive === "add" && <Add />}
       {tabActive === "edit" && <Edit />}

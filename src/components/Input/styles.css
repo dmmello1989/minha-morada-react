@@ -3,13 +3,16 @@
   margin-bottom: 32px;
 }
 
+.input--small {
+  width: 78%;
+}
+
 .input--edit {
   width: auto;
   margin-bottom: 0;
 }
 
 .input--card-edit {
-  width: 78%;
   font-size: 24px;
   margin-bottom: 0;
 }
