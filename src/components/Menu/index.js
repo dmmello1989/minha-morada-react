@@ -31,10 +31,6 @@ export const Menu = ({ menuActive, setMenuActive }) => {
     },
   ];
 
-  const handleClick = slug => {
-    setMenuActive(slug);
-  }
-  
   return (
     <div className="menu">
       <Container className="container--menu">
@@ -43,7 +39,7 @@ export const Menu = ({ menuActive, setMenuActive }) => {
             const isActive = menuActive === item.icon ? "active" : "";
 
             return (
-              <li className="menu__item" key={`menu-item-${index}`} onClick={() => handleClick(item.icon)}>
+              <li className="menu__item" key={`menu-item-${index}`} onClick={() => setMenuActive(item.icon)}>
                 <div className={`menu__image ${isActive}`}>
                   <Icon icon={item.icon} width={42} height={42} />
                 </div>

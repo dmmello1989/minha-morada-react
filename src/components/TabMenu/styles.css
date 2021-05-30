@@ -7,7 +7,7 @@
   border: 1px solid #cccccc;
 }
 
-.tab-menu-item {
+.tab-menu__item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,11 +17,11 @@
   cursor: pointer;
 }
 
-.tab-menu-item:hover {
+.tab-menu__item:hover {
   opacity: 0.6;
 }
 
-.tab-menu-item svg {
+.tab-menu__image {
   width: 24px;
   height: 24px;
   margin-right: 16px;
