@@ -1,7 +1,7 @@
 import "./styles.css";
 
-export const Card = ({ child }) => {
+export const Card = ({ children }) => {
   return (
-    <div className="card">{child}</div>
+    <div className="card">{children}</div>
   )
 }

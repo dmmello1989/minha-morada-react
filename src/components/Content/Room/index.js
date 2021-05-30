@@ -1,7 +1,22 @@
+import { Add } from "./add";
+import { Search } from "./search";
+import { Edit } from "./edit";
+import { Delete } from "./delete";
 
+const rooms = [
+  "Salão de Festas",
+  "Salão Gourmet",
+  "Sala de Jogos",
+  "Academia"
+];
 
-export const Room = ({ className, children }) => {
+export const Room = ({ tabActive }) => {
   return (
-    <div className={`content ${className}`}>{children}</div>
+    <div className="content">
+      {tabActive === "search" && <Search rooms={rooms} />}
+      {tabActive === "add" && <Add rooms={rooms} />}
+      {tabActive === "edit" && <Edit rooms={rooms} />}
+      {tabActive === "delete" && <Delete rooms={rooms} />}
+    </div>
   );
 }

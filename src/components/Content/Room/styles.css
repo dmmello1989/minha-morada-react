@@ -1,0 +1,34 @@
+.content {
+  display: flex;
+}
+
+/* 
+SEARCH
+*/
+
+.content__title {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.content__title {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.content__half {
+  width: 50%;
+  padding: 0 8px;
+  overflow-y: auto;
+}
+
+.content__item {
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.content__item span {
+  display: block;
+  color: #757575;
+  margin-bottom: 8px;
+}

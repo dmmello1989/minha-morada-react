@@ -29,7 +29,7 @@ export const TabMenu = ({ tabActive, setTabActive }) => {
         const isActive = tabActive === item.icon ? "tab-active" : "";
 
         return (
-          <li className="tab-menu__item" key={`tab-menu-item-${index}`} onClick={() => setTabActive(item.icon)}>
+          <li className={`tab-menu__item ${isActive}`} key={`tab-menu-item-${index}`} onClick={() => setTabActive(item.icon)}>
             <div className={`tab-menu__image ${isActive}`}>
               <Icon icon={item.icon} width={24} height={24} />
             </div>

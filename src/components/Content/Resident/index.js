@@ -3,9 +3,6 @@ import { Search } from "./search";
 import { Edit } from "./edit";
 import { Delete } from "./delete";
 
-import { Container } from "../../Container";
-import { Box } from "../../Box";
-
 const aptOptions = [
   "101", "102", "103", "104", "201", "202", "203", "204"
 ]
