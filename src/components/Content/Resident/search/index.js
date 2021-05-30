@@ -4,15 +4,7 @@ import { Button } from "../../../Button";
 import { PersonCard } from "../../../PersonCard";
 import "../styles.css";
 
-export const Search = () => {
-  const aptOptions = [
-    "101", "102", "103", "104", "201", "202", "203", "204"
-  ]
-
-  const blockOptions = [
-    "A", "B", "C", "D"
-  ]
-
+export const Search = ({ aptOptions, blockOptions }) => {
   return (
     <>
       <div class="content__half">
@@ -24,19 +16,20 @@ export const Search = () => {
           label="Nome do Condômino"
         />
 
+        
         <div class="content__item">
-          <span>Ou selecione um apartamento:</span>
+          <span>Selecione o bloco (se houver):</span>
           <Select 
-            name="apartment"
-            options={aptOptions}
+            name="block"
+            options={blockOptions}
           />
         </div>
 
         <div class="content__item">
-          <span>Selecione o bloco:</span>
+          <span>Selecione o apartamento:</span>
           <Select 
-            name="block"
-            options={blockOptions}
+            name="apartment"
+            options={aptOptions}
           />
         </div>
 

@@ -15,6 +15,10 @@
             3px 3px 5px rgba(94,104,121,0.288);
 }
 
+.button--red {
+  background-color: #FA2E27;
+}
+
 .button--small {
   font-size: 24px;
 }
