@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-class Apt extends React.PureComponent {
+class apartment extends React.PureComponent {
   render() {
     const { width, height, className } = this.props;
     const classes = classNames("icon", className);
@@ -12,7 +12,7 @@ class Apt extends React.PureComponent {
           height={height}
           viewBox="0 0 64 64"
           className={classes}
-          enable-background="new 0 0 64 64" 
+          enableBackground="new 0 0 64 64" 
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="m25.793 19.793-4.207 4.207 2 2-22.586 22.586v7.414h7.414l2.731-2.729-1-3 .126-.126 3 1 1.874-1.874-1-3 .126-.126 3 1 1.874-1.874-1-3 .126-.126 3 1 9.729-9.731 2 2 4.207-4.207z" fill="#f0bc5e"/>
@@ -30,4 +30,4 @@ class Apt extends React.PureComponent {
   }
 }
 
-export default Apt;
+export default apartment;

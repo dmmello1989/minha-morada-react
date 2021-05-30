@@ -12,7 +12,7 @@ class Edit extends React.PureComponent {
         height={height}
         viewBox="0 0 496 496"
         className={classes}
-        enable-background="new 0 0 64 64" 
+        enableBackground="new 0 0 64 64" 
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="m208 40v64h-176v192h64v-88h256v-168zm0 0" fill="#f0bc5e"/>

@@ -9,3 +9,8 @@
 .container--home {
   margin: 80px auto 180px auto;
 }
+
+.container--menu {
+  width: 900px;
+  margin: 32px auto 0;
+}

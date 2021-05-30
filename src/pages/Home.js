@@ -1,3 +1,5 @@
+import { useHistory } from "react-router-dom";
+
 import { Header } from "../components/Header";
 import { Container } from "../components/Container";
 import { Box } from "../components/Box";
@@ -8,6 +10,12 @@ import { Footer } from "../components/Footer";
 import "../styles/home.css";
 
 export const Home = () => {
+  const history = useHistory();
+
+  const handleSubmit = () => {
+    history.push("/dashboard");
+  }
+
   return (
     <div className="page-wrapper">
       <Header />
@@ -22,10 +30,10 @@ export const Home = () => {
               </h2>
             </div>
 
-            <div class="main--right">
+            <div className="main--right">
               <Box>
-                <h3 class="main__title--form is-bold">Login</h3>
-                <form class="form" action="login" method="post">
+                <h3 className="main__title--form is-bold">Login</h3>
+                <form className="form" action="login" onSubmit={(e) => handleSubmit(e)}>
 
                   <Input
                     name="email"
@@ -38,10 +46,10 @@ export const Home = () => {
                     label="Senha"
                   />
 
-                  <div class="form__action">
-                    <Link className="link--blue is-bold" href="/cadastrar-condomino.html">Esqueceu sua senha?</Link>
-                    <Button className="button--small button--has-m-bottom">Entrar</Button>
-                    <span>Não tem conta? <Link className="link--blue is-bold" href="/cadastrar-condomino.html">Cadastre-se aqui</Link>.</span>
+                  <div className="form__action">
+                    <Link className="link--blue is-bold" href="/">Esqueceu sua senha?</Link>
+                    <Button className="button--small button--has-m-bottom" type="submit">Entrar</Button>
+                    <span>Não tem conta? <Link className="link--blue is-bold" href="/">Cadastre-se aqui</Link>.</span>
                   </div>
                 </form>
               </Box>

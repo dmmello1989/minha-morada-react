@@ -12,11 +12,10 @@ class Assembly extends React.PureComponent {
         height={height}
         viewBox="0 0 501.216 501.216"
         className={classes}
-        enable-background="new 0 0 64 64" 
+        enableBackground="new 0 0 64 64" 
         xmlns="http://www.w3.org/2000/svg"
-        style="enable-background:new 0 0 501.216 501.216;"
       >
-      <path style="fill:#F0BC5E;" d="M378.608,183.944l-28-37.336h-72l-28,37.336l-28-37.336h-64l-28,37.336l-28-37.336h-76
+      <path fill="#F0BC5E" d="M378.608,183.944l-28-37.336h-72l-28,37.336l-28-37.336h-64l-28,37.336l-28-37.336h-76
         c-13.232,0-24-10.768-24-24v-96c0-13.232,10.768-24,24-24h448c13.232,0,24,10.768,24,24v96c0,13.232-10.768,24-24,24h-68
         L378.608,183.944z"
       />

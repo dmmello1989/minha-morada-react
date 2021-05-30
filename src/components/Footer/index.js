@@ -5,21 +5,21 @@ import "./styles.css";
 
 export const Footer = () => {
   return (
-    <footer class="footer">
+    <footer className="footer">
       <Container>
-        <div class="footer-left">
+        <div className="footer-left">
           <Link href="/">FAQ</Link>
           <Link href="/">Termos de Uso</Link>
           <Link href="/">Política de Privacidade</Link>
         </div>
-        <div class="footer-right">
-          <a class="footer-right-icon" href="http://www.facebook.com">
+        <div className="footer-right">
+          <a className="footer-right-icon" href="http://www.facebook.com">
             <Icon icon="facebook" width={24} height={24} className="icon--primary" />
           </a>
-          <a class="footer-right-icon" href="http://www.instagram.com">
+          <a className="footer-right-icon" href="http://www.instagram.com">
             <Icon icon="instagram" width={24} height={24} className="icon--primary" />
           </a>
-          <a class="footer-right-icon" href="http://www.twitter.com">
+          <a className="footer-right-icon" href="http://www.twitter.com">
             <Icon icon="twitter" width={24} height={24} className="icon--primary" />
           </a>
         </div>

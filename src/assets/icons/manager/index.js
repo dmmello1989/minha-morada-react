@@ -12,7 +12,7 @@ class Add extends React.PureComponent {
         height={height}
         viewBox="0 0 64 64"
         className={classes}
-        enable-background="new 0 0 64 64" 
+        enableBackground="new 0 0 64 64" 
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="m46 15v33l.119.178 3.877 1.94 3.998-2 4.003 2 3.885-1.941.118-.177v-33z" fill="#f0bc5e"/>

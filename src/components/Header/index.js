@@ -5,15 +5,15 @@ import "./styles.css";
 
 export const Header = () => {
   return (
-    <header class="header">
+    <header className="header">
       <Container>
         <Link href="/index.html">
-          <div class="header__logo">
+          <div className="header__logo">
             <Icon icon="logo" width={80} height={80} />
-            <span class="header__text">Minha Morada</span>
+            <span className="header__text">Minha Morada</span>
           </div>
         </Link>
-        <div class="header__nav">
+        <div className="header__nav">
           <Link href="/" className="link--header">FAQ</Link>
           <Link href="/" className="link--header">Serviços</Link>
           <Link href="/" className="link--header">Sobre</Link>
