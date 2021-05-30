@@ -5,7 +5,7 @@ import "./styles.css";
 
 export const Footer = () => {
   return (
-    <footer class="footer" id="footer">
+    <footer class="footer">
       <Container>
         <div class="footer-left">
           <Link href="/">FAQ</Link>

@@ -1,0 +1,21 @@
+.header {
+  padding: 8px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header__text {
+  margin-left: 16px;
+  font-size: 28px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* .headernav a {
+  margin-right: 32px;
+  font-size: 24px;
+  color: #1a1a1a;
+} */

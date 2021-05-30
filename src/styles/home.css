@@ -1,0 +1,56 @@
+.main {
+  background-image: url("../assets/bg2.svg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: 210px;
+  background-clip: content-box;
+  background-size: 710px;
+}
+
+.main--left {
+  width: 60%;
+}
+
+.main--right {
+  width: 35%;
+}
+
+.main__text--small {
+  font-size: 32px;
+}
+
+.main__title {
+  font-size: 64px;
+  margin-left: 15%;
+  margin-bottom: 16px;
+  color: #F9BA48;
+}
+
+.main__title--form {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.main__subtitle {
+  font-size: 20px;
+  color: #757575;
+}
+
+.main__subtitle--blue {
+  color: #004DB0;
+}
+
+.form__action {
+  font-size: 14px;
+}
+
+/* .form__action > span > a {
+  color: #004DB0;
+  font-weight: 800;
+} */
+
+@media (min-width: 1600px) {
+  .main {
+    background-size: 790px;
+  }
+}

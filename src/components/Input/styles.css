@@ -1,32 +1,33 @@
-div.input {
+.input {
   position: relative;
   margin-bottom: 32px;
 }
 
-.input.edit {
+.input--edit {
   width: auto;
   margin-bottom: 0;
 }
 
-input {
+.input--card-edit {
+  width: 78%;
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.input__input {
   position: relative;
   width: 100%;
   padding-left: 8px;
   outline: none;
   color: #757575;
   font-size: 20px;
+  border: none;
   border-bottom: 2px solid #1a1a1a;
   background-color: transparent;
   z-index: 11;
 }
 
-.input.card-edit {
-  width: 78%;
-  font-size: 24px;
-  margin-bottom: 0;
-}
-
-input ~ label {
+.input__input ~ .input__label {
   position: absolute;
   top: 0;
   left: 0;
@@ -34,8 +35,8 @@ input ~ label {
   transition: .4s;
 }
 
-input:focus ~ label,
-input:valid ~ label {
+.input__input:focus ~ .input__label,
+.input__input:valid ~ .input__label {
   transform: translateY(-20px);
   font-size: 0.8em;
   letter-spacing: 0.1em;

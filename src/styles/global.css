@@ -23,7 +23,12 @@ button {
 a {
   text-decoration: none;
 }
-#page-container {
-  position: relative;
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
+}
+.is-bold {
+  font-weight: 700;
 }

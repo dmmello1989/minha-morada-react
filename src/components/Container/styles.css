@@ -5,3 +5,7 @@
   width: 1000px;
   margin: 0 auto;
 }
+
+.container--home {
+  margin: 80px auto 180px auto;
+}

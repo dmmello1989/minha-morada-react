@@ -1,7 +1,7 @@
 import "./styles.css";
 
-export const Box = ({ child }) => {
+export const Box = ({ children }) => {
   return (
-    <button className="box">{child}</button>
+    <div className="box">{children}</div>
   );
 }

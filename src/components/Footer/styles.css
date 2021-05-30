@@ -1,11 +1,5 @@
-#footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-
 .footer {
+  width: 100%;
   padding: 28px;
   background-color: #F9BA48;
 }

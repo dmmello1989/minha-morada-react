@@ -1,4 +1,6 @@
 .button {
+  display: block;
+  width: 100%;
   margin-top: 16px;
   padding: 4px 16px;
   color: #ffffff;
@@ -11,4 +13,12 @@
   cursor: pointer;
   box-shadow: -3px -3px 7px #ffffff73,
             3px 3px 5px rgba(94,104,121,0.288);
+}
+
+.button--small {
+  font-size: 24px;
+}
+
+.button--has-m-bottom {
+  margin-bottom: 8px;
 }
