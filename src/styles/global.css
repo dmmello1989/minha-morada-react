@@ -32,3 +32,6 @@ a {
 .is-bold {
   font-weight: 700;
 }
+.is-pointer {
+  cursor: pointer
+}

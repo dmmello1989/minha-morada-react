@@ -1,51 +1,29 @@
+import { useState } from "react";
+
 import { Input } from "../../../Input";
-import { Select } from "../../../Select";
 import { Button } from "../../../Button";
-import { PersonCard } from "../../../PersonCard";
+import { Card } from "../../../Card";
 import "../styles.css";
 
-export const Delete = ({ aptOptions, blockOptions }) => {
+export const Delete = ({ rooms }) => {
+  const [active, setActive] = useState("");
+
   return (
     <>
       <div class="content__half">
-        <h2 class="content__title">Excluir Condômino</h2>
+        <h2 class="content__title">Editar Espaço</h2>
+          {rooms.map((item, index) => {
+            const isActive = active === index;
 
-        <Input 
-          name="name"
-          className="input--small"
-          label="Nome do Condômino"
-        />
-
-        
-        <div class="content__item">
-          <span>Selecione o bloco (se houver):</span>
-          <Select 
-            name="block"
-            options={blockOptions}
-          />
-        </div>
-
-        <div class="content__item">
-          <span>Selecione o apartamento:</span>
-          <Select 
-            name="apartment"
-            options={aptOptions}
-          />
-        </div>
-
-        
-      </div>
-
-      <div class="content__half">
-        <PersonCard
-          person="personOne"
-          name="Maria Silva"
-          cpf="123.456.789-00"
-          birthday="05/04/1987"
-          email="maria@gmail.com"
-          phone="(48) 3210-0123 \ (48) 9999-9999"
-        />
-        <Button className="button--fit-content button--red">Excluir Condômino</Button>
+            return (
+              <div className="is-pointer" onClick={() => setActive(index)}>
+                <Card key={`room-${index}`} className={`card--name ${isActive && "card--selected"}`}>
+                  {item}
+                </Card>
+                {isActive && <Button className="button button--red">Excluir Espaço</Button>}
+              </div>
+            )
+          })}
       </div>
     </>
   )

@@ -7,7 +7,6 @@ const rooms = [
   "Salão de Festas",
   "Salão Gourmet",
   "Sala de Jogos",
-  "Academia"
 ];
 
 export const Room = ({ tabActive }) => {

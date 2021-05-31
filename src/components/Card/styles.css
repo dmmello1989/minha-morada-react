@@ -21,7 +21,7 @@
   font-size: 14px;
 }
 
-.card-name {
+.card--name {
   font-size: 24px;
   font-weight: 800;
 }
@@ -31,7 +31,7 @@
   font-weight: 800;
 }
 
-.card-button {
+.card--button {
   margin-top: 0;
   font-size: 24px;
 }
@@ -44,7 +44,7 @@
   background-color: #FA2E27;
 }
 
-.card.selected {
+.card--selected {
   box-shadow: inset -3px -3px 7px #ffffff73,
               inset 3px 3px 5px rgba(94,104,121,0.288);
   background-color: #eeeeee;

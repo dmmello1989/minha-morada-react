@@ -4,7 +4,6 @@ import { Button } from "../../../Button";
 import "../styles.css";
 
 export const Search = ({ rooms }) => {
-  console.log(rooms)
   return (
     <>
       <div class="content__half">
@@ -21,9 +20,9 @@ export const Search = ({ rooms }) => {
 
       <div class="content__half">
         <span>Resultado:</span>
-        {rooms.map((item, index) => {
-          <div key={`room-${index}`}>{item}</div>
-        })}
+        {rooms.map((item, index) => (
+          <Card key={`room-${index}`} className="card--name">{item}</Card>
+        ))}
       </div>
     </>
   )
