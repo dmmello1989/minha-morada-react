@@ -3,7 +3,7 @@ import { Icon } from "../../assets/icons";
 
 import "./styles.css";
 
-export const TabMenu = ({ tabActive, setTabActive }) => {
+export const TabMenu = ({ tabActive, setTabActive, isSchedule }) => {
   const menuItems = [
     {
       icon: "search",
@@ -23,20 +23,51 @@ export const TabMenu = ({ tabActive, setTabActive }) => {
     },
   ];
 
+  const scheduleItems = [
+    {
+      icon: "add",
+      label: "Agendar"
+    },
+    {
+      icon: "delete",
+      label: "Cancelar"
+    }
+  ]
+
   return (
     <ul className="tab-menu">
-      {menuItems.map((item, index) => {
-        const isActive = tabActive === item.icon ? "tab-active" : "";
-
-        return (
-          <li className={`tab-menu__item ${isActive}`} key={`tab-menu-item-${index}`} onClick={() => setTabActive(item.icon)}>
-            <div className={`tab-menu__image ${isActive}`}>
-              <Icon icon={item.icon} width={24} height={24} />
-            </div>
-            <span className={`tab-menu__text ${isActive}`}>{item.label}</span>
-          </li>
-        )
-      })}
+      {isSchedule ? (
+        <>
+          {scheduleItems.map((item, index) => {
+            const isActive = tabActive === item.icon ? "tab-active" : "";
+    
+            return (
+              <li className={`tab-menu__item ${isActive}`} key={`tab-menu-item-${index}`} onClick={() => setTabActive(item.icon)}>
+                <div className={`tab-menu__image ${isActive}`}>
+                  <Icon icon={item.icon} width={24} height={24} />
+                </div>
+                <span className={`tab-menu__text ${isActive}`}>{item.label}</span>
+              </li>
+            )
+          })}
+        </>
+      ) : (
+        <>
+          {menuItems.map((item, index) => {
+            const isActive = tabActive === item.icon ? "tab-active" : "";
+    
+            return (
+              <li className={`tab-menu__item ${isActive}`} key={`tab-menu-item-${index}`} onClick={() => setTabActive(item.icon)}>
+                <div className={`tab-menu__image ${isActive}`}>
+                  <Icon icon={item.icon} width={24} height={24} />
+                </div>
+                <span className={`tab-menu__text ${isActive}`}>{item.label}</span>
+              </li>
+            )
+          })}
+        </>
+      )}
+      
     </ul>
   );
 }

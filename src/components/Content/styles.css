@@ -1,10 +1,11 @@
 .content {
   display: flex;
+  width: 100%;
 }
 
-/* 
-SEARCH
-*/
+.content--flex-column {
+  flex-direction: column;
+}
 
 .content__title {
   font-size: 32px;
@@ -31,4 +32,20 @@ SEARCH
   display: block;
   color: #757575;
   margin-bottom: 8px;
+}
+
+/* SCHEDULE */
+
+.content__header {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 86px;
+  padding-left: 16px;
+  color: #757575;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.content__bottom {
+  width: 100%;
 }

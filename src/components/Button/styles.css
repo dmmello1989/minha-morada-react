@@ -11,8 +11,7 @@
   text-align: center;
   background: #004DB0;
   cursor: pointer;
-  box-shadow: -3px -3px 7px #ffffff73,
-            3px 3px 5px rgba(94,104,121,0.288);
+  box-shadow: 3px 3px 5px rgba(94,104,121,0.288);
 }
 
 .button--red {
@@ -27,6 +26,23 @@
   width: fit-content;
 }
 
+.button--full-width {
+  width: 100%;
+}
+
+.button--card {
+  margin-top: 0;
+  font-size: 24px;
+}
+
 .button--has-m-bottom {
   margin-bottom: 8px;
+}
+
+.button--card.available {
+  background-color: #3CB371;
+}
+
+.button--card.occupied {
+  background-color: #FA2E27;
 }

@@ -48,7 +48,7 @@ export const Home = () => {
 
                   <div className="form__action">
                     <Link className="link--blue is-bold" href="/">Esqueceu sua senha?</Link>
-                    <Button className="button--small button--has-m-bottom" type="submit">Entrar</Button>
+                    <Button className="button--small button--has-m-bottom button--full-width" type="submit">Entrar</Button>
                     <span>Não tem conta? <Link className="link--blue is-bold" href="/">Cadastre-se aqui</Link>.</span>
                   </div>
                 </form>

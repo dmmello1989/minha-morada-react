@@ -1,45 +1,52 @@
 import { useState } from "react";
 
-import { Input } from "../../../Input";
 import { Button } from "../../../Button";
 import { Card } from "../../../Card";
-import "../styles.css";
+import "../../styles.css";
 
-export const Delete = ({ rooms }) => {
-  const [active, setActive] = useState("");
+export const Delete = ({ roomSchedules }) => {
+  const [active, setActive] = useState(null);
+
+  const deleteItem = index => {
+    return alert(`Item ${index} deletado.`)
+  }
 
   return (
     <>
-      <h2 class="content-title">Cancelar Agendamentos</h2>
+      <h2 class="content__title">Cancelar Agendamentos</h2>
 
-      <div class="content-bottom">
-        <div class="content-bottom-header">
-          <span>Espaço:</span>
+      <div className="content__bottom">
+        <div className="content__header">
+          <span style={{marginRight: 110}}>Espaço:</span>
           <span>Data:</span>
           <span>Status:</span>
         </div>
-        <div class="card" style="background-color: #004DB0; color: #FFFFFF;">
-          <span class="card-name">Salão de Festas</span>
-          <span class="card-name">22/07/2020</span>
-          <div class="button card-button" style="background-color: #F0BC5E; box-shadow: none;">Agendado</div>
-        </div>
-        <div class="card">
-          <span class="card-name">Área Gourmet</span>
-          <span class="card-name">02/05/2019</span>
-          <div class="button card-button">Ocupado</div>
-        </div>
-        <div class="card">
-          <span class="card-name">Sala de Cinema</span>
-          <span class="card-name">19/01/2019</span>
-          <div class="button card-button">Ocupado</div>
-        </div>
-        
+
+        {roomSchedules.map((room, index) => {
+          const classActive = active === index;
+          const isAvailable = room.status === "available";
+          const classAvailable = isAvailable ? "available" : "occupied";
+
+          return (
+            <Card
+              key={`room-schedule-${index}`}
+              onClick={() => setActive(index)}
+              className={`card--pointer ${classActive && "card--selected"}`}
+            >
+              <span className="card--name">{room.name}</span>
+              <span className="card--name">{room.date}</span>
+              <Button className={`button button--fit-content button--card ${classAvailable}`}>
+                {isAvailable ? "Agendar" : "Ocupado"}
+              </Button>
+            </Card>
+          )
+        })}
       </div>
 
-      <div class="content-item">
-        <div class="button" style="width: 350px; background-color: #FA2E27;">
+      <div className="content-item">
+        <Button className="button button--red" onClick={() => deleteItem(active)}>
           Excluir Agendamento
-        </div>
+        </Button>
       </div>
     </>
   )

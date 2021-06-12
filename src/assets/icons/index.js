@@ -3,7 +3,7 @@ import React from "react";
 import Add from "./add";
 import Apartment from "./apartment";
 import Assembly from "./assembly";
-import Calendar from "./calendar";
+import Schedule from "./schedule";
 import Delete from "./delete";
 import Edit from "./edit";
 import Facebook from "./facebook";
@@ -29,8 +29,8 @@ export const Icon = ({ icon, width, height, className }) => {
       return <Apartment width={width} height={height} className={className} />;
     case "assembly":
       return <Assembly width={width} height={height} className={className} />;
-    case "calendar":
-      return <Calendar width={width} height={height} className={className} />;
+    case "schedule":
+      return <Schedule width={width} height={height} className={className} />;
     case "edit":
       return <Edit width={width} height={height} className={className} />;
     case "facebook":

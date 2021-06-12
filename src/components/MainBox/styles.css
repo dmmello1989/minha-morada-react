@@ -6,4 +6,5 @@
 
 .main-box__content {
   padding: 32px;
+  min-height: 300px;
 }

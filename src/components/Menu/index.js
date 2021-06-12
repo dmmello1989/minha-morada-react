@@ -14,7 +14,7 @@ export const Menu = ({ menuActive, setMenuActive }) => {
       label: "Espaços"
     },
     {
-      icon: "calendar",
+      icon: "schedule",
       label: "Agendar Espaços"
     },
     {

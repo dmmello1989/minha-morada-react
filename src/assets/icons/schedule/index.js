@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-class Calendar extends React.PureComponent {
+class Schedule extends React.PureComponent {
   render() {
     const { width, height, className } = this.props;
     const classes = classNames("icon", className);
@@ -55,4 +55,4 @@ class Calendar extends React.PureComponent {
   }
 }
 
-export default Calendar;
+export default Schedule;

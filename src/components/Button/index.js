@@ -1,7 +1,7 @@
 import "./styles.css";
 
-export const Button = ({ className, children }) => {
+export const Button = ({ className, onClick, children }) => {
   return (
-    <button className={`button ${className}`}>{children}</button>
+    <button className={`button ${className}`} onClick={onClick}>{children}</button>
   );
 }

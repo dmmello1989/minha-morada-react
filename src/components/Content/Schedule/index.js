@@ -21,9 +21,9 @@ const roomSchedules = [
 
 export const Schedule = ({ tabActive }) => {
   return (
-    <div className="content">
+    <>
       {tabActive === "add" && <Add roomSchedules={roomSchedules} />}
       {tabActive === "delete" && <Delete roomSchedules={roomSchedules} />}
-    </div>
+    </>
   );
 }
