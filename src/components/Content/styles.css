@@ -12,11 +12,6 @@
   margin-bottom: 24px;
 }
 
-.content__title {
-  font-size: 32px;
-  margin-bottom: 24px;
-}
-
 .content__half {
   width: 50%;
   padding: 0 8px;
@@ -48,4 +43,17 @@
 
 .content__bottom {
   width: 100%;
+}
+
+/* ASSEMBLY */
+
+.content__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 8px;
+}
+
+.content__date {
+  width: 20%;
 }

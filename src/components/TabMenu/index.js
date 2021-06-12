@@ -6,12 +6,12 @@ import "./styles.css";
 export const TabMenu = ({ tabActive, setTabActive, isSchedule }) => {
   const menuItems = [
     {
-      icon: "search",
-      label: "Consultar"
-    },
-    {
       icon: "add",
       label: "Cadastrar"
+    },
+    {
+      icon: "search",
+      label: "Consultar"
     },
     {
       icon: "edit",

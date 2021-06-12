@@ -14,6 +14,7 @@ import PersonOne from "./personOne";
 import PersonTwo from "./personTwo";
 import PersonThree from "./personThree";
 import PersonFour from "./personFour";
+import Plus from "./plus";
 import Resident from "./resident";
 import Room from "./room";
 import Search from "./search";
@@ -49,6 +50,8 @@ export const Icon = ({ icon, width, height, className }) => {
       return <PersonThree width={width} height={height} className={className} />;
     case "personFour":
       return <PersonFour width={width} height={height} className={className} />;
+    case "plus":
+      return <Plus width={width} height={height} className={className} />;
     case "resident":
       return <Resident width={width} height={height} className={className} />;
     case "room":

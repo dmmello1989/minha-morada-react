@@ -3,7 +3,7 @@ import { Icon } from "../../assets/icons";
 
 import "./styles.css";
 
-export const Menu = ({ menuActive, setMenuActive }) => {
+export const Menu = ({ menuActive, handleNavigation }) => {
   const menuItems = [
     {
       icon: "resident",
@@ -39,7 +39,7 @@ export const Menu = ({ menuActive, setMenuActive }) => {
             const isActive = menuActive === item.icon ? "active" : "";
 
             return (
-              <li className="menu__item" key={`menu-item-${index}`} onClick={() => setMenuActive(item.icon)}>
+              <li className="menu__item" key={`menu-item-${index}`} onClick={() => handleNavigation(item.icon)}>
                 <div className={`menu__image ${isActive}`}>
                   <Icon icon={item.icon} width={42} height={42} />
                 </div>

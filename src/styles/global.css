@@ -9,6 +9,7 @@ body {
   color: #1a1a1a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(221, 225, 231, 0.3);
 }
 body, input, button {
   font-family: 'PT Sans', sans-serif;

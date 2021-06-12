@@ -4,9 +4,7 @@ import { Content } from "../Content";
 import { TabMenu } from "../TabMenu";
 import "./styles.css";
 
-export const MainBox = ({ menuActive }) => {
-  const [tabActive, setTabActive] = useState("add");
-
+export const MainBox = ({ menuActive, tabActive, setTabActive }) => {
   return (
     <Container className="container--main">
       <div className="main-box">

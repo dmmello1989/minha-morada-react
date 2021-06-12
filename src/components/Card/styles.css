@@ -11,24 +11,29 @@
   3px 3px 5px rgba(94,104,121,0.288);
 }
 
-.card-left {
+.card__left {
   display: flex;
   align-items: center;
 }
 
-.card-right {
+.card__right {
   width: 80%;
   font-size: 14px;
 }
 
-.card--name {
+.card__name {
   font-size: 24px;
   font-weight: 800;
 }
 
-.card-key {
+.card__key {
   color: #757575;
   font-weight: 800;
+}
+
+.card__key--m-bottom {
+  display: block;
+  margin-bottom: 32px;
 }
 
 .card--selected {

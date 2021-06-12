@@ -6,12 +6,25 @@ import { Footer } from "../components/Footer";
 
 export const Dashboard = () => {
   const [menuActive, setMenuActive] = useState("resident");
+  const [tabActive, setTabActive] = useState("add");
+
+  const handleNavigation = menu => {
+    setTabActive("add");
+    setMenuActive(menu);
+  };
 
   return(
     <div className="page-wrapper">
       <Header />
-      <Menu menuActive={menuActive} setMenuActive={setMenuActive} />
-      <MainBox menuActive={menuActive} />
+      <Menu 
+        menuActive={menuActive}
+        handleNavigation={handleNavigation}
+      />
+      <MainBox
+        tabActive={tabActive}
+        menuActive={menuActive}
+        setTabActive={setTabActive}
+      />
       <Footer />
     </div>
   )
