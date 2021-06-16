@@ -16,7 +16,7 @@ export const Edit = ({ rooms }) => {
 
             return (
               <div className="is-pointer" onClick={() => setActive(index)}>
-                <Card key={`room-${index}`} className="card--name">
+                <Card key={`room-${index}`} className="card__name">
                   {isActive ? (
                     <Input 
                       name="room"

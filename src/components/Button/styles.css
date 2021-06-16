@@ -18,6 +18,10 @@
   background-color: #FA2E27;
 }
 
+.button--yellow {
+  background-color: #F9BA48;
+}
+
 .button--small {
   font-size: 24px;
 }

@@ -23,6 +23,10 @@
   width: 100%;
 }
 
+.content__item--no-margin {
+  margin-bottom: 0;
+}
+
 .content__item span {
   display: block;
   color: #757575;
@@ -56,4 +60,15 @@
 
 .content__date {
   width: 20%;
+}
+
+.content__textarea {
+  width: 100%;
+  min-height: 170px;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #1a1a1a;
+  border-radius: 8px;
+  resize: vertical;
+  outline: none;
 }

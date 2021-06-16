@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import { Input } from "../../../Input";
 import { Button } from "../../../Button";
 import { Card } from "../../../Card";
 import "../styles.css";
@@ -17,7 +16,7 @@ export const Delete = ({ rooms }) => {
 
             return (
               <div className="is-pointer" onClick={() => setActive(index)}>
-                <Card key={`room-${index}`} className={`card--name ${isActive && "card--selected"}`}>
+                <Card key={`room-${index}`} className={`card__name ${isActive && "card--selected"}`}>
                   {item}
                 </Card>
                 {isActive && <Button className="button button--red">Excluir Espaço</Button>}

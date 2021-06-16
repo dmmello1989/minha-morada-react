@@ -2,81 +2,68 @@ import { useState } from "react";
 
 import { Input } from "../../../Input";
 import { Button } from "../../../Button";
-import { Select } from "../../../Select";
-import { Icon } from "../../../../assets/icons";
+import { Card } from "../../../Card";
 
-export const Edit = ({ residents, selectApartments, selectBlocks }) => {
+export const Edit = ({ assemblies }) => {
   const [active, setActive] = useState("");
 
   return (
-    <>
-      <div className="content__half">
-        <h2 className="content__title">Editar Apartamento</h2>
-
-        <div className="content__item">
-          <span>Selecione um apartamento:</span>
-          <div className="select">
-            <Select
-              name="Apartamentos"
-              options={selectApartments}
-            />
-          </div>
+    <div className="content content--flex-column">
+      <h2 className="content__title">Editar Assembléias</h2>
+      <div className="content__top">
+        <div className="content__item content__item--no-margin">
+          <Input
+            name="type"
+            label="Digite um tipo de assembléia"
+            className="input--small"
+          />
         </div>
-
-        <div className="content__item">
-          <span>Selecione o bloco:</span>
-          <div className="select">
-            <Select
-              name="Blocos"
-              options={selectBlocks}
-            />
-          </div>
+        <div className="content__date">
+          <Input
+            name="date"
+            type="date"
+            isDate={true}
+            label="Selecione uma data"
+          />
         </div>
       </div>
 
-      <div className="content__half">
-        <div className="content-item-inputs">
-          <Input 
-            required={true}
-            name="apartment"
-            label="Nº Apartamento"
-            className="input--small"
-          />
-          <Input 
-            required={true}
-            name="block"
-            label="Bloco"
-            className="input--small"
-          />
-          <Input 
-            required={true}
-            name="apartment"
-            label="Vaga(s) garagem"
-            className="input--small"
-          />
+      <div className="content__bottom">
+        <div className="content__header">
+          <span style={{marginRight: 110}}>Assembléia:</span>
+          <span>Data:</span>
+          <span>Status:</span>
         </div>
 
-        <div className="content__item">
-          <span className="card__key card__key--m-bottom">Moradores:</span>
-          <div className="content__item">
-            <Input
-              name="cpf"
-              required={true}
-              label="CPF do Condômino"
-              className="input--small"
-            />
-            <Button className="button--fit-content">
-              <Icon icon="plus" width={24} height={24} />
-            </Button>
-          </div>
-        </div>
+        {assemblies.map((assembly, index) => {
+          const isActive = active === index;
 
-        <div className="content-item">
-          <div className="button">
-            Salvar Alterações
-          </div>
-        </div>
+          return (
+            <Card key={`room-schedule-${index}`} className="card--pointer" onClick={() => setActive(index)}>
+              {isActive ? (
+                <>
+                  <Input
+                    name="type"
+                    type="type"
+                    label={assembly.type}
+                  />
+                  <Input
+                    name="date"
+                    type="date"
+                    isDate={true}
+                  />
+                </>
+              ) : (
+                <>
+                  <span className="card__name">{assembly.type}</span>
+                  <span className="card__name">{assembly.date}</span>
+                </>
+              )}
+              <Button className="button--yellow button--fit-content">Anexar</Button>
+            </Card>
+          )
+        })}
       </div>
-    </>
+    </div>
   )
 }

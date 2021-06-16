@@ -21,7 +21,7 @@ export const Search = ({ rooms }) => {
       <div class="content__half">
         <span>Resultado:</span>
         {rooms.map((item, index) => (
-          <Card key={`room-${index}`} className="card--name">{item}</Card>
+          <Card key={`room-${index}`} className="card__name">{item}</Card>
         ))}
       </div>
     </>

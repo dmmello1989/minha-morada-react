@@ -18,8 +18,8 @@ export const Add = ({ roomSchedules }) => {
 
           return (
             <Card key={`room-schedule-${index}`}>
-              <span className="card--name">{room.name}</span>
-              <span className="card--name">{room.date}</span>
+              <span className="card__name">{room.name}</span>
+              <span className="card__name">{room.date}</span>
               <Button className={`button button--fit-content button--card ${isAvailable ? "available" : "occupied"}`}>
                 {isAvailable ? "Agendar" : "Ocupado"}
               </Button>

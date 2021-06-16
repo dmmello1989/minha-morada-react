@@ -34,9 +34,14 @@
   transition: .4s;
 }
 
-.input__input:focus ~ .input__label,
-.input__input:valid ~ .input__label {
+input:focus ~ .input__label,
+input:valid ~ .input__label {
   transform: translateY(-20px);
   font-size: 0.8em;
   letter-spacing: 0.1em;
+}
+
+.input__label--date {
+  transform: translateY(-20px);
+  transition: none;
 }

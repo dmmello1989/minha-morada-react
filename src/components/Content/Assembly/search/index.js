@@ -1,66 +1,46 @@
-import { Select } from "../../../Select";
+import { Input } from "../../../Input";
+import { Button } from "../../../Button";
 import { Card } from "../../../Card";
 import { Icon } from "../../../../assets/icons";
 import "../../styles.css";
 
-export const Search = ({ residents, selectApartments, selectBlocks }) => {
+export const Search = ({ assemblies }) => {
   return (
-    <>
-      <div class="content__half">
-        <h2 class="content__title">Consultar Apartamento</h2>
-
-        <div class="content__item">
-          <span>Selecione um apartamento:</span>
-          <div class="select">
-            <Select
-              name="Apartamentos"
-              options={selectApartments}
-            />
-          </div>
+    <div className="content content--flex-column">
+      <h2 className="content__title">Consultar Assembléias</h2>
+      <div className="content__top">
+        <div className="content__item content__item--no-margin">
+          <Input
+            name="type"
+            label="Digite um tipo de assembléia"
+            className="input--small"
+          />
         </div>
-
-        <div class="content__item">
-          <span>Selecione o bloco:</span>
-          <div class="select">
-            <Select
-              name="Blocos"
-              options={selectBlocks}
-            />
-          </div>
+        <div className="content__date">
+          <Input
+            name="date"
+            type="date"
+            isDate={true}
+            label="Selecione uma data"
+          />
         </div>
       </div>
 
-      <div class="content__half">
-        <div style={{marginBottom: 16}}>
-          <span class="card__key">Vaga(s) Estacionamento:</span>
-          <span class="card__value"><strong>12, 13</strong></span>
+      <div className="content__bottom">
+        <div className="content__header">
+          <span style={{marginRight: 110}}>Assembléia:</span>
+          <span>Data:</span>
+          <span>Status:</span>
         </div>
 
-        {residents.map((resident, index) => (
-          <Card key={`resident-${index}`}>
-            <div class="card__left">
-              <Icon icon={resident.icon} width={64} height={64} />
-            </div>
-            <div class="card__right">
-              <p class="card__name">{resident.name}</p>
-              <div>
-                <span class="card__key">CPF:</span>
-                <span class="card__value">{resident.cpf}</span>
-                <span class="card__key">Data Nasc.:</span>
-                <span class="card__value">{resident.birthday}</span>
-              </div>
-              <div>
-                <span class="card__key">E-mail:</span>
-                <span class="card__value">{resident.email}</span>
-              </div>
-              <div>
-                <span class="card__key">Telefone:</span>
-                <span class="card__value">{resident.phone}</span>
-              </div>
-            </div>
+        {assemblies.map((assembly, index) => (
+          <Card key={`room-schedule-${index}`}>
+            <span className="card__name">{assembly.type}</span>
+            <span className="card__name">{assembly.date}</span>
+            <Button className="button--fit-content">Ver Ata</Button>
           </Card>
         ))}
       </div>
-    </>
+    </div>
   )
 }

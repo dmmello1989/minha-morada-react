@@ -1,68 +1,55 @@
-import { Select } from "../../../Select";
+import { useState } from "react";
+
+import { Input } from "../../../Input";
 import { Card } from "../../../Card";
 import { Button } from "../../../Button";
 import { Icon } from "../../../../assets/icons";
 import "../../styles.css";
 
-export const Delete = ({ residents, selectApartments, selectBlocks }) => {
+export const Delete = ({ assemblies }) => {
+  const [active, setActive] = useState("");
+
   return (
-    <>
-      <div class="content__half">
-        <h2 class="content__title">Consultar Apartamento</h2>
-
-        <div class="content__item">
-          <span>Selecione um apartamento:</span>
-          <div class="select">
-            <Select
-              name="Apartamentos"
-              options={selectApartments}
-            />
-          </div>
+    <div className="content content--flex-column">
+      <h2 className="content__title">Excluir Assembléias</h2>
+      <div className="content__top">
+        <div className="content__item content__item--no-margin">
+          <Input
+            name="type"
+            label="Digite um tipo de assembléia"
+            className="input--small"
+          />
         </div>
-
-        <div class="content__item">
-          <span>Selecione o bloco:</span>
-          <div class="select">
-            <Select
-              name="Blocos"
-              options={selectBlocks}
-            />
-          </div>
+        <div className="content__date">
+          <Input
+            name="date"
+            type="date"
+            isDate={true}
+            label="Selecione uma data"
+          />
         </div>
-        <Button className="button button--red">Excluir Apartamento</Button>
       </div>
 
-      <div class="content__half">
-        <div style={{marginBottom: 16}}>
-          <span class="card__key">Vaga(s) Estacionamento:</span>
-          <span class="card__value"><strong>12, 13</strong></span>
+      <div className="content__bottom">
+        <div className="content__header">
+          <span style={{marginRight: 110}}>Assembléia:</span>
+          <span>Data:</span>
+          <span>Status:</span>
         </div>
 
-        {residents.map((resident, index) => (
-          <Card key={`resident-${index}`}>
-            <div class="card__left">
-              <Icon icon={resident.icon} width={64} height={64} />
-            </div>
-            <div class="card__right">
-              <p class="card__name">{resident.name}</p>
-              <div>
-                <span class="card__key">CPF:</span>
-                <span class="card__value">{resident.cpf}</span>
-                <span class="card__key">Data Nasc.:</span>
-                <span class="card__value">{resident.birthday}</span>
-              </div>
-              <div>
-                <span class="card__key">E-mail:</span>
-                <span class="card__value">{resident.email}</span>
-              </div>
-              <div>
-                <span class="card__key">Telefone:</span>
-                <span class="card__value">{resident.phone}</span>
-              </div>
-            </div>
-          </Card>
-        ))}
+        {assemblies.map((assembly, index) => {
+          const isActive = active === index;
+
+          return (
+            <Card key={`room-schedule-${index}`} className={`card--pointer ${isActive ? "card--selected" : ""}`} onClick={() => setActive(index)}>
+              <span className="card__name">{assembly.type}</span>
+              <span className="card__name">{assembly.date}</span>
+              <Button className={`button--fit-content ${isActive ? "button--yellow" : ""}`}>Ver Ata</Button>
+            </Card>
+          )
+        })}
+        <Button className="button--red">Excluir Assembléia</Button>
       </div>
-    </>
+    </div>
   )
 }
