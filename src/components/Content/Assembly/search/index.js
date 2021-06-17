@@ -1,7 +1,6 @@
+import { Card } from "../../../Card";
 import { Input } from "../../../Input";
 import { Button } from "../../../Button";
-import { Card } from "../../../Card";
-import { Icon } from "../../../../assets/icons";
 import "../../styles.css";
 
 export const Search = ({ assemblies }) => {

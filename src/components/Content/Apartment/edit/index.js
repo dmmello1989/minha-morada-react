@@ -1,13 +1,10 @@
-import { useState } from "react";
 
 import { Input } from "../../../Input";
 import { Button } from "../../../Button";
 import { Select } from "../../../Select";
 import { Icon } from "../../../../assets/icons";
 
-export const Edit = ({ residents, selectApartments, selectBlocks }) => {
-  const [active, setActive] = useState("");
-
+export const Edit = ({ selectApartments, selectBlocks }) => {
   return (
     <>
       <div className="content__half">

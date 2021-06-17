@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-import { Input } from "../../../Input";
 import { Card } from "../../../Card";
+import { Input } from "../../../Input";
 import { Button } from "../../../Button";
-import { Icon } from "../../../../assets/icons";
 import "../../styles.css";
 
 export const Delete = ({ assemblies }) => {

@@ -1,6 +1,4 @@
 import { Input } from "../../../Input";
-import { Button } from "../../../Button";
-import { Icon } from "../../../../assets/icons";
 import "../../styles.css";
 
 export const Add = () => {

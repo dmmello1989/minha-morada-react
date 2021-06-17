@@ -72,3 +72,72 @@
   resize: vertical;
   outline: none;
 }
+
+/* MESSAGES */
+
+.content__messages {
+  height: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  border: 2px solid #1a1a1a;
+}
+
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  min-width: 10%;
+  border-right: 2px solid #1a1a1a;
+  overflow: auto;
+}
+
+.contacts__item {
+  padding: 4px 8px;
+  cursor: pointer;
+  color: #757575;
+}
+
+.contacts__item:hover {
+  background: #004DB0;
+  color: #FFFFFF;
+}
+
+.contacts__item:nth-child(6) {
+  background: #004DB0;
+  color: #FFFFFF;
+}
+
+.contacts__name {
+  display: block;
+  padding-left: 4px;
+  font-weight: 700;
+}
+
+.contacts__name strong {
+  font-size: 12px;
+}
+
+.contacts__name--is-user {
+  color: #004DB0;
+}
+
+.message__display {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.message__line {
+  padding: 2px;
+}
+
+.message__area {
+  height: 36px;
+  padding: 6px;
+  resize: none;
+  font-size: 16px;
+}
+
+.message__text {
+  padding-left: 8px;
+}

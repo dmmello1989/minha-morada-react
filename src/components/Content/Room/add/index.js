@@ -1,5 +1,4 @@
 import { Input } from "../../../Input";
-import { Select } from "../../../Select";
 import { Button } from "../../../Button";
 
 export const Add = () => {
