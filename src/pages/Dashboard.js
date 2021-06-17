@@ -15,7 +15,7 @@ export const Dashboard = () => {
 
   return(
     <div className="page-wrapper">
-      <Header />
+      <Header isDashboard={true} />
       <Menu 
         menuActive={menuActive}
         handleNavigation={handleNavigation}
