@@ -11,7 +11,7 @@ export const Delete = ({ numbersApt, apartment, selectBlocks, handleSelectApartm
   return (
     <>
       <div className="content__half">
-        <h2 className="content__title">Consultar Apartamento</h2>
+        <h2 className="content__title">Excluir Apartamento</h2>
 
         <div className="content__item">
           <span>Selecione um apartamento:</span>

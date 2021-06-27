@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import { Card } from "../../../Card";
 import { Input } from "../../../Input";
@@ -6,25 +6,18 @@ import { Button } from "../../../Button";
 import { Select } from "../../../Select";
 import { Icon } from "../../../../assets/icons";
 
-import ApartmentService from "../../../../services/ApartmentService";
 import "../../styles.css";
 
-
-const initialState = {
-  numeroApto: "",
-  blocoApto: "",
-  vagaGaragem: ""
-};
-
 export const Edit = ({ 
+  editData,
   apartment,
-  apartments,
   numbersApt,
+  setEditData,
   selectBlocks,
-  setApartments,
+  editApartment,
   handleSelectApartment
 }) => {
-  const [editData, setEditData] = useState(initialState);
+
   const hasApartment = Object.keys(apartment).length > 0;
   const resident = hasApartment && apartment.morador;
 
@@ -35,20 +28,6 @@ export const Edit = ({
       vagaGaragem: apartment.vagaGaragem
     });
   }, [apartment])
-
-  const editApartment = (e, id) => {
-    e.preventDefault();
-
-    const body = {
-      "apartamento": {
-        ...editData
-      }
-    }
-
-    ApartmentService.editApartment(id, body).then(response => {
-      return setApartments([ ...apartments, editData ]);
-    })
-  }
 
   return (
     <form onSubmit={e => editApartment(e, apartment.id)} className="form">

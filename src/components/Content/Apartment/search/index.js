@@ -3,7 +3,7 @@ import { Card } from "../../../Card";
 import { Icon } from "../../../../assets/icons";
 import "../../styles.css";
 
-export const Search = ({ numbersApt, apartment, selectBlocks, handleSelectApartment }) => {
+export const Search = ({ numbersApt, apartment, selectBlocks, getApartments, handleSelectApartment }) => {
   const hasApartment = Object.keys(apartment).length > 0;
   const resident = hasApartment && apartment.morador;
 

@@ -1,28 +1,8 @@
-import { useState } from "react";
 import { Input } from "../../../Input";
 import { Button } from "../../../Button";
-// import { Icon } from "../../../../assets/icons";
-
-import ApartmentService from "../../../../services/ApartmentService";
 import "../../styles.css";
 
-export const Add = ({ apartments, setApartments }) => {
-  const [apartamento, setApartamento] = useState({});
-
-  const createApartment = (e) => {
-    e.preventDefault();
-
-    const body = {
-      "apartamento": {
-        ...apartamento
-      }
-    }
-
-    ApartmentService.createApartment(body).then(response => {
-      return setApartments([ ...apartments, apartamento ]);
-    })
-  }
-
+export const Add = ({ createData, setCreateData, createApartment }) => {
   return (
     <form onSubmit={createApartment} className="form">
       <div className="content__half">
@@ -33,24 +13,24 @@ export const Add = ({ apartments, setApartments }) => {
             required={true}
             name="apartment"
             label="Nº Apartamento"
-            value={apartamento.numeroApto}
+            value={createData.numeroApto}
             className="input--small"
-            onChange={e => setApartamento({ ...apartamento, numeroApto: e.target.value })}
+            onChange={e => setCreateData({ ...createData, numeroApto: e.target.value })}
           />
           <Input 
             name="block"
             label="Bloco"
-            value={apartamento.blocoApto}
+            value={createData.blocoApto}
             className="input--small"
-            onChange={e => setApartamento({ ...apartamento, blocoApto: e.target.value })}
+            onChange={e => setCreateData({ ...createData, blocoApto: e.target.value })}
           />
           <Input 
             required={true}
             name="apartment"
             label="Vaga(s) garagem"
             className="input--small"
-            value={apartamento.vagaGaragem}
-            onChange={e => setApartamento({ ...apartamento, vagaGaragem: e.target.value })}
+            value={createData.vagaGaragem}
+            onChange={e => setCreateData({ ...createData, vagaGaragem: e.target.value })}
           />
         </div>
       </div>
