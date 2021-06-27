@@ -5,9 +5,9 @@ import { Button } from "../../../Button";
 export const Edit = ({ aptOptions, blockOptions }) => {
   return (
     <>
-      <div class="content__half">
-        <h2 class="content__title">Editar Condômino</h2>
-        <div class="content__item">
+      <div className="content__half">
+        <h2 className="content__title">Editar Condômino</h2>
+        <div className="content__item">
           <span>Selecione o bloco (se houver):</span>
           <Select 
             name="block"
@@ -15,7 +15,7 @@ export const Edit = ({ aptOptions, blockOptions }) => {
           />
         </div>
 
-        <div class="content__item">
+        <div className="content__item">
           <span>Busque pelo apartamento:</span>
           <Select 
             name="apartment"
@@ -24,7 +24,7 @@ export const Edit = ({ aptOptions, blockOptions }) => {
         </div>
       </div>
 
-      <div class="content__half">
+      <div className="content__half">
         <Input 
           name="name"
           className="input--small"

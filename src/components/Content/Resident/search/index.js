@@ -7,8 +7,8 @@ import "../styles.css";
 export const Search = ({ aptOptions, blockOptions }) => {
   return (
     <>
-      <div class="content__half">
-        <h2 class="content__title">Consultar Condômino</h2>
+      <div className="content__half">
+        <h2 className="content__title">Consultar Condômino</h2>
 
         <Input 
           name="name"
@@ -17,7 +17,7 @@ export const Search = ({ aptOptions, blockOptions }) => {
         />
 
         
-        <div class="content__item">
+        <div className="content__item">
           <span>Selecione o bloco (se houver):</span>
           <Select 
             name="block"
@@ -25,7 +25,7 @@ export const Search = ({ aptOptions, blockOptions }) => {
           />
         </div>
 
-        <div class="content__item">
+        <div className="content__item">
           <span>Selecione o apartamento:</span>
           <Select 
             name="apartment"
@@ -36,7 +36,7 @@ export const Search = ({ aptOptions, blockOptions }) => {
         <Button className="button--fit-content">Pesquisar</Button>
       </div>
 
-      <div class="content__half">
+      <div className="content__half">
         <PersonCard
           person="personOne"
           name="Maria Silva"

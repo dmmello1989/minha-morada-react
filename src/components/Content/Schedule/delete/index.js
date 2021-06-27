@@ -13,7 +13,7 @@ export const Delete = ({ roomSchedules }) => {
 
   return (
     <>
-      <h2 class="content__title">Cancelar Agendamentos</h2>
+      <h2 className="content__title">Cancelar Agendamentos</h2>
 
       <div className="content__bottom">
         <div className="content__header">

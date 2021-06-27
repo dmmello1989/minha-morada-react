@@ -14,7 +14,7 @@ export const Header = ({ isDashboard }) => {
           </div>
         </Link>
         {isDashboard ? (
-          <div class="header-nav">
+          <div className="header-nav">
             <h2>Olá, <strong>Daniel</strong></h2>
           </div>
         ) : (

@@ -36,6 +36,10 @@
   margin-bottom: 32px;
 }
 
+.card__value {
+  padding: 0 6px;
+}
+
 .card--selected {
   /* box-shadow: inset -3px -3px 7px #ffffff73,
               inset 3px 3px 5px rgba(94,104,121,0.288); */

@@ -9,8 +9,8 @@ export const Delete = ({ rooms }) => {
 
   return (
     <>
-      <div class="content__half">
-        <h2 class="content__title">Editar Espaço</h2>
+      <div className="content__half">
+        <h2 className="content__title">Editar Espaço</h2>
           {rooms.map((item, index) => {
             const isActive = active === index;
 

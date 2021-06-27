@@ -4,7 +4,7 @@ import { Button } from "../../../Button";
 import { Select } from "../../../Select";
 import { Icon } from "../../../../assets/icons";
 
-export const Edit = ({ selectApartments, selectBlocks }) => {
+export const Edit = ({ selectApartments,  }) => {
   return (
     <>
       <div className="content__half">
@@ -25,7 +25,7 @@ export const Edit = ({ selectApartments, selectBlocks }) => {
           <div className="select">
             <Select
               name="Blocos"
-              options={selectBlocks}
+              options="Não há blocos"
             />
           </div>
         </div>
