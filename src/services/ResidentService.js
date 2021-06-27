@@ -12,12 +12,12 @@ class ResidentService {
     return axios.get(`${RESIDENT_API_URL}/${id}`);
   };
 
-  createResident() {
-    return axios.post(RESIDENT_API_URL);
+  createResident(body) {
+    return axios.post(RESIDENT_API_URL, body);
   };
 
-  editResident(id) {
-    return axios.put(`${RESIDENT_API_URL}/${id}`);
+  editResident(id, body) {
+    return axios.put(`${RESIDENT_API_URL}/${id}`, body);
   };
 
   deleteResident(id) {

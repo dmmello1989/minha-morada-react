@@ -17,7 +17,6 @@ export const Edit = ({
   editApartment,
   handleSelectApartment
 }) => {
-
   const hasApartment = Object.keys(apartment).length > 0;
   const resident = hasApartment && apartment.morador;
 
@@ -66,7 +65,6 @@ export const Edit = ({
           onChange={e => setEditData({ ...editData, numeroApto: e.target.value })}
         />
         <Input 
-          required={true}
           name="block"
           label="Bloco"
           className="input--small"

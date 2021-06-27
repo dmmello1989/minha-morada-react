@@ -41,9 +41,7 @@
 }
 
 .card--selected {
-  /* box-shadow: inset -3px -3px 7px #ffffff73,
-              inset 3px 3px 5px rgba(94,104,121,0.288); */
-  background-color: #004DB0;
+  background-color: #004DB0 !important;
   color: #ffffff;
 }
 

@@ -3,31 +3,24 @@ import { useEffect } from "react";
 import { Input } from "../../../Input";
 import { Select } from "../../../Select";
 import { Button } from "../../../Button";
+import { Card } from "../../../Card";
 import { PersonCard } from "../../../PersonCard";
 import "../styles.css";
 
 export const Search = ({ 
-  residents,
-  apartment,
   numbersApt, 
+  searchTerm,
   selectBlocks,
   getResidents,
   searchResult,
-  setSearchResult,
+  handleSearchResident,
   handleSelectApartment
 }) => {
+  const hasSearched = searchResult.length > 0;
 
   useEffect(() => {
     getResidents();
   }, []);
-
-  console.log(apartment)
-
-  const handleSearchResident = person => {
-    const resident = residents.find(it => it.nome === person);
-
-    console.log(resident);
-  }
 
   return (
     <>
@@ -38,9 +31,10 @@ export const Search = ({
           name="name"
           className="input--small"
           label="Nome do Condômino"
+          value={searchTerm}
+          onChange={handleSearchResident}
         />
 
-        
         <div className="content__item">
           <span>Selecione o bloco (se houver):</span>
           <Select 
@@ -62,17 +56,23 @@ export const Search = ({
       </div>
 
       <div className="content__half">
-        {residents.map((person, index) => (
-          <PersonCard
-            cpf={person.cpf}
-            person="personOne"
-            name={person.nome}
-            email={person.email}
-            key={`person-${index}`}
-            phone={person.telefone}
-            birthday={person.dataNascimento}
-          />
-        ))}
+        {hasSearched ? (
+          <>
+            {searchResult.map((person, index) => (
+              <PersonCard
+                cpf={person.cpf}
+                name={person.nome}
+                person="personOne"
+                email={person.email}
+                key={`person-${index}`}
+                phone={person.telefone}
+                birthday={person.dataNascimento}
+              />
+            ))}
+          </>
+        ) : (
+          <Card>Apartamento vazio</Card>
+        )}
       </div>
     </>
   )
