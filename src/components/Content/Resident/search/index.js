@@ -1,10 +1,34 @@
+import { useEffect } from "react";
+
 import { Input } from "../../../Input";
 import { Select } from "../../../Select";
 import { Button } from "../../../Button";
 import { PersonCard } from "../../../PersonCard";
 import "../styles.css";
 
-export const Search = ({ aptOptions, blockOptions }) => {
+export const Search = ({ 
+  residents,
+  apartment,
+  numbersApt, 
+  selectBlocks,
+  getResidents,
+  searchResult,
+  setSearchResult,
+  handleSelectApartment
+}) => {
+
+  useEffect(() => {
+    getResidents();
+  }, []);
+
+  console.log(apartment)
+
+  const handleSearchResident = person => {
+    const resident = residents.find(it => it.nome === person);
+
+    console.log(resident);
+  }
+
   return (
     <>
       <div className="content__half">
@@ -21,7 +45,7 @@ export const Search = ({ aptOptions, blockOptions }) => {
           <span>Selecione o bloco (se houver):</span>
           <Select 
             name="block"
-            options={blockOptions}
+            options={selectBlocks}
           />
         </div>
 
@@ -29,7 +53,8 @@ export const Search = ({ aptOptions, blockOptions }) => {
           <span>Selecione o apartamento:</span>
           <Select 
             name="apartment"
-            options={aptOptions}
+            options={numbersApt}
+            onChange={e => handleSelectApartment(e.target.value)}
           />
         </div>
 
@@ -37,14 +62,17 @@ export const Search = ({ aptOptions, blockOptions }) => {
       </div>
 
       <div className="content__half">
-        <PersonCard
-          person="personOne"
-          name="Maria Silva"
-          cpf="123.456.789-00"
-          birthday="05/04/1987"
-          email="maria@gmail.com"
-          phone="(48) 3210-0123 \ (48) 9999-9999"
-        />
+        {residents.map((person, index) => (
+          <PersonCard
+            cpf={person.cpf}
+            person="personOne"
+            name={person.nome}
+            email={person.email}
+            key={`person-${index}`}
+            phone={person.telefone}
+            birthday={person.dataNascimento}
+          />
+        ))}
       </div>
     </>
   )

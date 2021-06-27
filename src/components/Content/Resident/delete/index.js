@@ -4,7 +4,7 @@ import { Button } from "../../../Button";
 import { PersonCard } from "../../../PersonCard";
 import "../styles.css";
 
-export const Delete = ({ aptOptions, blockOptions }) => {
+export const Delete = ({ numbersApt, selectBlocks }) => {
   return (
     <>
       <div className="content__half">
@@ -21,7 +21,7 @@ export const Delete = ({ aptOptions, blockOptions }) => {
           <span>Selecione o bloco (se houver):</span>
           <Select 
             name="block"
-            options={blockOptions}
+            options={selectBlocks}
           />
         </div>
 
@@ -29,7 +29,7 @@ export const Delete = ({ aptOptions, blockOptions }) => {
           <span>Selecione o apartamento:</span>
           <Select 
             name="apartment"
-            options={aptOptions}
+            options={numbersApt}
           />
         </div>
 

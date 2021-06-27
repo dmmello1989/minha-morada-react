@@ -52,7 +52,7 @@ export const Apartment = ({ tabActive }) => {
         position: toast.POSITION.TOP_CENTER
       })
     ));
-  }
+  };
 
   const getApartment = id => {
     ApartmentService.getApartment(id).then(response => {

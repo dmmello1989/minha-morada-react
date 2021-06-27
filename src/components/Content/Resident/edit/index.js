@@ -2,7 +2,7 @@ import { Input } from "../../../Input";
 import { Select } from "../../../Select";
 import { Button } from "../../../Button";
 
-export const Edit = ({ aptOptions, blockOptions }) => {
+export const Edit = ({ apartments, selectBlocks }) => {
   return (
     <>
       <div className="content__half">
@@ -11,7 +11,7 @@ export const Edit = ({ aptOptions, blockOptions }) => {
           <span>Selecione o bloco (se houver):</span>
           <Select 
             name="block"
-            options={blockOptions}
+            options={selectBlocks}
           />
         </div>
 
@@ -19,7 +19,7 @@ export const Edit = ({ aptOptions, blockOptions }) => {
           <span>Busque pelo apartamento:</span>
           <Select 
             name="apartment"
-            options={aptOptions}
+            options={apartments}
           />
         </div>
       </div>
