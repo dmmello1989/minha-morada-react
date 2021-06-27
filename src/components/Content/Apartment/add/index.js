@@ -18,7 +18,6 @@ export const Add = ({ apartments, setApartments }) => {
       }
     }
 
-    console.log(body)
     ApartmentService.createApartment(body).then(response => {
       return setApartments([ ...apartments, apartamento ]);
     })

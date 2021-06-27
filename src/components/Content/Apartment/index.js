@@ -60,9 +60,13 @@ export const Apartment = ({ tabActive }) => {
           setApartments={setApartments}
         />}
       {tabActive === "edit" && 
-        <Edit 
+        <Edit
+          apartment={apartment}
+          numbersApt={numbersApt}
           apartments={apartments}
           selectBlocks={selectBlocks}
+          setApartments={setApartments}
+          handleSelectApartment={handleSelectApartment}
         />}
       {tabActive === "delete" && 
         <Delete 

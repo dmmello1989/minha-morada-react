@@ -1,12 +1,57 @@
+import { useState, useEffect } from "react";
 
+import { Card } from "../../../Card";
 import { Input } from "../../../Input";
 import { Button } from "../../../Button";
 import { Select } from "../../../Select";
 import { Icon } from "../../../../assets/icons";
 
-export const Edit = ({ selectApartments,  }) => {
+import ApartmentService from "../../../../services/ApartmentService";
+import "../../styles.css";
+
+
+const initialState = {
+  numeroApto: "",
+  blocoApto: "",
+  vagaGaragem: ""
+};
+
+export const Edit = ({ 
+  apartment,
+  apartments,
+  numbersApt,
+  selectBlocks,
+  setApartments,
+  handleSelectApartment
+}) => {
+  const [editData, setEditData] = useState(initialState);
+  const hasApartment = Object.keys(apartment).length > 0;
+  const resident = hasApartment && apartment.morador;
+
+  useEffect(() => {
+    setEditData({
+      numeroApto: apartment.numeroApto,
+      blocoApto: apartment.blocoApto,
+      vagaGaragem: apartment.vagaGaragem
+    });
+  }, [apartment])
+
+  const editApartment = (e, id) => {
+    e.preventDefault();
+
+    const body = {
+      "apartamento": {
+        ...editData
+      }
+    }
+
+    ApartmentService.editApartment(id, body).then(response => {
+      return setApartments([ ...apartments, editData ]);
+    })
+  }
+
   return (
-    <>
+    <form onSubmit={e => editApartment(e, apartment.id)} className="form">
       <div className="content__half">
         <h2 className="content__title">Editar Apartamento</h2>
 
@@ -15,7 +60,8 @@ export const Edit = ({ selectApartments,  }) => {
           <div className="select">
             <Select
               name="Apartamentos"
-              options={selectApartments}
+              options={numbersApt}
+              onChange={e => handleSelectApartment(e.target.value)}
             />
           </div>
         </div>
@@ -25,55 +71,75 @@ export const Edit = ({ selectApartments,  }) => {
           <div className="select">
             <Select
               name="Blocos"
-              options="Não há blocos"
+              options={selectBlocks}
             />
           </div>
         </div>
       </div>
 
-      <div className="content__half">
-        <div className="content-item-inputs">
-          <Input 
-            required={true}
-            name="apartment"
-            label="Nº Apartamento"
-            className="input--small"
-          />
-          <Input 
-            required={true}
-            name="block"
-            label="Bloco"
-            className="input--small"
-          />
-          <Input 
-            required={true}
-            name="apartment"
-            label="Vaga(s) garagem"
-            className="input--small"
-          />
-        </div>
+      <div className="content__half content__half--p-top">
+        <Input 
+          required={true}
+          name="apartment"
+          label="Nº Apartamento"
+          className="input--small"
+          value={editData.numeroApto}
+          onChange={e => setEditData({ ...editData, numeroApto: e.target.value })}
+        />
+        <Input 
+          required={true}
+          name="block"
+          label="Bloco"
+          className="input--small"
+          value={editData.blocoApto}
+          onChange={e => setEditData({ ...editData, blocoApto: e.target.value })}
+        />
+        <Input 
+          required={true}
+          name="apartment"
+          label="Vaga(s) garagem"
+          className="input--small"
+          value={editData.vagaGaragem}
+          onChange={e => setEditData({ ...editData, vagaGaragem: e.target.value })}
+        />
 
-        <div className="content__item">
-          <span className="card__key card__key--m-bottom">Moradores:</span>
-          <div className="content__item">
-            <Input
-              name="cpf"
-              required={true}
-              label="CPF do Condômino"
-              className="input--small"
-            />
-            <Button className="button--fit-content">
-              <Icon icon="plus" width={24} height={24} />
-            </Button>
-          </div>
+        <div>
+          <span className="card__key">Moradores:</span>
+          
+          {!!resident ? (
+            <Card>
+              <div className="card__left">
+                <Icon icon="personOne" width={64} height={64} />
+              </div>
+              <div className="card__right">
+                <p className="card__name">{resident.nome}</p>
+                <div>
+                  <span className="card__key">CPF:</span>
+                  <span className="card__value">{resident.cpf}</span>
+                  <span className="card__key">Data Nasc.:</span>
+                  <span className="card__value">{resident.dataNascimento}</span>
+                </div>
+                <div>
+                  <span className="card__key">E-mail:</span>
+                  <span className="card__value">{resident.email}</span>
+                </div>
+                <div>
+                  <span className="card__key">Telefone:</span>
+                  <span className="card__value">{resident.telefone}</span>
+                </div>
+              </div>
+            </Card>
+          ) : (
+            <Card>
+              <p className="card__name">Apartamento vazio</p>
+            </Card>
+          )}
         </div>
 
         <div className="content-item">
-          <div className="button">
-            Salvar Alterações
-          </div>
+          <Button className="button">Salvar Alterações</Button>
         </div>
       </div>
-    </>
+    </form>
   )
 }

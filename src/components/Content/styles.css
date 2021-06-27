@@ -18,6 +18,10 @@
   overflow-y: auto;
 }
 
+.content__half--p-top {
+  padding-top: 16px;
+}
+
 .content__item {
   margin-bottom: 32px;
   width: 100%;
